@@ -6,18 +6,19 @@ import List from './component.jsx/List.jsx';
 import Data from './component.jsx/Data.jsx';
 import Complex from './component.jsx/Complex.jsx';
 import Render from './component.jsx/Render.jsx';
+import User from './component.jsx/User.jsx';
 
 
 
 function App() {
   return (
    <div>
+      
       <Hello/>
       <Object/>
       <List/>
       <Data/>
-      <Complex/>
-      
+      <Complex/>   
       <Render/>
    </div>
   );

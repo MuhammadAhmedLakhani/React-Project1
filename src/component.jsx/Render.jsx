@@ -1,5 +1,5 @@
 
-
+import users from "./User.jsx"
 
 
 
@@ -607,39 +607,62 @@ const posts = [
     }
 ]
 
-console.log(posts.map((obj,i)=>obj.title))
+
 
 function Render() {
 
     return (
         <div>
-            {
-            posts.map((obj, i) => {
-                return (
-                <div key = {obj.id}> 
-                    <div className='post'>
-          <h1 className='title'>{obj.title}</h1>
-          <p>{obj.body}</p>
-          <button className='btn'>Post</button>
-        
-      </div>
-                </div>
-            )
-            })
-            
-            
-            }
-        </div>
-    )
 
+            {
+
+
+                users.map((user) => {
+                    return (
+                        <div key={user.id}>
+                            <div className="head">
+                                <h6> {user.name}  ({user.email})</h6>
+                                <h4>{user.email}</h4>
+                            </div>
+                            {posts.filter((obj, i) => {
+                                return obj.userId === user.id
+
+                            }).map((post) => {
+
+                                return (
+
+
+                                    < div className='post' >
+                                        <h3 className='title'>{post.title}</h3>
+                                        <p>{post.body}</p>
+
+                                    </div >
+                                )
+
+
+
+
+                            })
+
+
+
+
+
+
+                            }
+
+
+
+                        </div>
+
+                    )
+                })
+
+            }
+
+        </div>
+
+    )
 }
 
-
-
-
 export default Render
-
-
-
-
-
